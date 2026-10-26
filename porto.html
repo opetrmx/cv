@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portofolio Yusuf Ali Farhan - Web Design, IT Support, Administrasi dan Jaringan.">
+<title>Yusuf Ali Farhan | Portfolio</title>
+
+<style>
+:root {
+  --bg: #080d19;
+  --card: #111a2d;
+  --text: #f4f7ff;
+  --muted: #aab6cc;
+  --cyan: #64e6ff;
+  --purple: #a99bff;
+  --pink: #ff8fb8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(ellipse at top, #19274a, var(--bg) 55%);
+  color: var(--text);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1100px, 90%); margin: auto; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #080d19ed;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #26334c;
+}
+.nav-inner {
+  min-height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo { font-size: 1.3rem; font-weight: 900; }
+.logo span, .gradient {
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+  color: transparent;
+  background-clip: text;
+}
+.nav-links { display: flex; gap: 24px; color: var(--muted); }
+.nav-links a:hover { color: var(--cyan); }
+.menu-btn {
+  display: none;
+  color: white;
+  background: var(--card);
+  border: 1px solid #34415a;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero { padding: 100px 0 75px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 45px;
+  align-items: center;
+}
+.badge {
+  display: inline-block;
+  color: var(--cyan);
+  border: 1px solid #30435a;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: .85rem;
+}
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin: 22px 0;
+}
+.hero p, .muted { color: var(--muted); }
+.hero p { font-size: 1.08rem; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
+.btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid #3c4a64;
+  transition: .2s;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn-primary {
+  background: linear-gradient(100deg, var(--cyan), var(--purple));
+  color: #08101c;
+  border: none;
+}
+.profile-card {
+  background: linear-gradient(145deg, #17233b, #101727);
+  border: 1px solid #34415a;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 60px #0004;
+}
+.avatar {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #080d19;
+  background: linear-gradient(135deg, var(--cyan), var(--pink));
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+.profile-card h2 { font-size: 1.35rem; margin-bottom: 8px; }
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+.fact {
+  padding: 13px;
+  border: 1px solid #34415a;
+  border-radius: 12px;
+  background: #ffffff08;
+}
+.fact strong { display: block; color: var(--cyan); }
+.fact small { color: var(--muted); }
+
+section { padding: 60px 0; }
+.section-label {
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .78rem;
+  font-weight: bold;
+}
+.section-title { font-size: 2.3rem; margin: 5px 0 14px; }
+.section-desc { color: var(--muted); margin-bottom: 28px; max-width: 650px; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid #263650;
+  border-radius: 18px;
+  padding: 25px;
+}
+.panel h3 { margin-bottom: 12px; }
+.panel p { color: var(--muted); }
+.details { display: grid; gap: 12px; }
+.detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #263650;
+  padding-bottom: 10px;
+}
+.detail:last-child { border: 0; }
+.detail span { color: var(--muted); }
+.detail strong { text-align: right; }
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.skill {
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid #263650;
+  border-radius: 16px;
+  transition: .2s;
+}
+.skill:hover, .project:hover {
+  transform: translateY(-5px);
+  border-color: var(--cyan);
+}
+.skill-icon { font-size: 1.7rem; margin-bottom: 10px; }
+.skill h3 { margin-bottom: 8px; }
+.skill p { color: var(--muted); font-size: .9rem; }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.project {
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid #263650;
+  border-radius: 17px;
+  transition: .2s;
+}
+.project-art {
+  height: 135px;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #183450, #48305f);
+}
+.project:nth-child(2) .project-art {
+  background: linear-gradient(135deg, #45243e, #843f62);
+}
+.project:nth-child(3) .project-art {
+  background: linear-gradient(135deg, #17433d, #285777);
+}
+.project:nth-child(4) .project-art {
+  background: linear-gradient(135deg, #3e3327, #745047);
+}
+.project:nth-child(5) .project-art {
+  background: linear-gradient(135deg, #29294e, #51427a);
+}
+.project:nth-child(6) .project-art {
+  background: linear-gradient(135deg, #19334b, #226477);
+}
+.project-body { padding: 20px; }
+.project-body p { color: var(--muted); font-size: .92rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.tag {
+  border: 1px solid #34415a;
+  border-radius: 20px;
+  padding: 3px 9px;
+  font-size: .73rem;
+  color: #d8e4f8;
+}
+.note { color: var(--muted); font-size: .84rem; margin-top: 18px; }
+
+.timeline { display: grid; gap: 14px; }
+.job {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  background: var(--card);
+  border: 1px solid #263650;
+  border-radius: 16px;
+  padding: 22px;
+}
+.year { color: var(--cyan); font-weight: bold; }
+.job p { color: var(--muted); }
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+  padding: 35px;
+  border: 1px solid #35415d;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #142a44, #29203e);
+}
+.contact-box h2 { font-size: 2rem; line-height: 1.2; margin: 10px 0; }
+.contact-list { display: grid; gap: 12px; }
+.contact-item {
+  display: block;
+  overflow-wrap: anywhere;
+  padding: 13px;
+  background: #0002;
+  border: 1px solid #35415d;
+  border-radius: 10px;
+}
+.contact-item small { display: block; color: var(--muted); }
+footer {
+  padding: 28px 0;
+  border-top: 1px solid #263650;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+@media(max-width: 850px) {
+  .hero-grid, .about-grid, .contact-box { grid-template-columns: 1fr; }
+  .skills { grid-template-columns: repeat(2, 1fr); }
+  .projects { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width: 600px) {
+  .menu-btn { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    background: #080d19;
+    padding: 20px;
+    flex-direction: column;
+  }
+  .nav-links.open { display: flex; }
+  .hero { padding-top: 60px; }
+  .skills, .projects { grid-template-columns: 1fr; }
+  .job { grid-template-columns: 1fr; gap: 5px; }
+  .detail { display: block; }
+  .detail strong { display: block; text-align: left; }
+  .section-title { font-size: 1.9rem; }
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">YF<span>.Portfolio</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false">☰ Menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">Tentang</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#projects">Portofolio</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">✦ Personal Portfolio</span>
+      <h1>Halo, saya<br><span class="gradient">Yusuf Ali Farhan.</span></h1>
+      <p>Saya memiliki pengalaman administrasi dan latar belakang Teknik Komputer dan Jaringan. Saya tertarik pada web design, desain grafis, komputer, serta instalasi jaringan internet dan CCTV.</p>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">Lihat Portofolio ↘</a>
+        <a href="#contact" class="btn">Hubungi Saya</a>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div class="avatar">YF</div>
+      <h2>Teknologi · Kreativitas · Solusi</h2>
+      <p class="muted">Membangun keterampilan digital dengan pengalaman praktis dan semangat belajar.</p>
+      <div class="facts">
+        <div class="fact"><strong>Web Design</strong><small>HTML, PHP, MySQL</small></div>
+        <div class="fact"><strong>IT Support</strong><small>PC & Laptop</small></div>
+        <div class="fact"><strong>Jaringan</strong><small>Internet & CCTV</small></div>
+        <div class="fact"><strong>Administrasi</strong><small>Office & dokumen</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="container">
+    <div class="section-label">Kenali saya</div>
+    <h2 class="section-title">Tentang Saya</h2>
+    <p class="section-desc">Perpaduan pengalaman administrasi dan minat pada teknologi informasi.</p>
+    <div class="about-grid">
+      <div class="panel">
+        <h3>Profil Singkat</h3>
+        <p>Saya memiliki latar belakang pendidikan Teknik Komputer dan Jaringan serta pengalaman sebagai staf tata usaha dan Kepala Urusan Umum dan Tata Usaha. Saya juga mengembangkan kemampuan web design, database, desain grafis, dan dukungan teknis komputer.</p>
+      </div>
+      <div class="panel details">
+        <div class="detail"><span>Nama</span><strong>Yusuf Ali Farhan</strong></div>
+        <div class="detail"><span>Domisili</span><strong>Banyuwangi, Jawa Timur</strong></div>
+        <div class="detail"><span>Pendidikan</span><strong>SMK Teknik Komputer dan Jaringan</strong></div>
+        <div class="detail"><span>Bahasa</span><strong>Indonesia</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Kemampuan saya</div>
+    <h2 class="section-title">Keahlian</h2>
+    <p class="section-desc">Bidang keterampilan yang saya miliki dan terus kembangkan.</p>
+    <div class="skills">
+      <article class="skill"><div class="skill-icon">▤</div><h3>Administrasi</h3><p>Pengolahan dokumen, pencatatan, dan tata usaha.</p></article>
+      <article class="skill"><div class="skill-icon">▦</div><h3>Microsoft Office</h3><p>Dokumen, tabel, dan kebutuhan administrasi.</p></article>
+      <article class="skill"><div class="skill-icon">✎</div><h3>Desain Grafis</h3><p>Materi visual untuk informasi dan promosi.</p></article>
+      <article class="skill"><div class="skill-icon">⌘</div><h3>PC & Laptop</h3><p>Instalasi software dan perangkat keras.</p></article>
+      <article class="skill"><div class="skill-icon">⌁</div><h3>Jaringan & CCTV</h3><p>Instalasi jaringan internet dan CCTV.</p></article>
+      <article class="skill"><div class="skill-icon">〈/〉</div><h3>Web Design</h3><p>Membuat website dengan HTML dan CSS.</p></article>
+      <article class="skill"><div class="skill-icon">PHP</div><h3>PHP</h3><p>Dasar pemrograman web dinamis.</p></article>
+      <article class="skill"><div class="skill-icon">DB</div><h3>MySQL</h3><p>Dasar database dan pengelolaan data.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Karya pilihan</div>
+    <h2 class="section-title">Portofolio Proyek</h2>
+    <p class="section-desc">Contoh bidang proyek yang dapat ditampilkan. Tambahkan tautan demo dan screenshot proyek asli saat tersedia.</p>
+    <div class="projects">
+      <article class="project"><div class="project-art">🌐</div><div class="project-body"><h3>Website Profil</h3><p>Website personal responsif untuk menampilkan profil, pengalaman, keahlian, dan kontak.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub Pages</span></div></div></article>
+      <article class="project"><div class="project-art">🎨</div><div class="project-body"><h3>Desain Promosi</h3><p>Konsep materi visual untuk memperkenalkan produk, jasa, atau usaha lokal.</p><div class="tags"><span class="tag">Desain Grafis</span><span class="tag">Branding</span></div></div></article>
+      <article class="project"><div class="project-art">📡</div><div class="project-body"><h3>Jaringan & CCTV</h3><p>Bidang layanan teknis instalasi dan pengecekan jaringan internet serta CCTV.</p><div class="tags"><span class="tag">Jaringan</span><span class="tag">CCTV</span></div></div></article>
+      <article class="project"><div class="project-art">📋</div><div class="project-body"><h3>Aplikasi Administrasi</h3><p>Konsep aplikasi pencatatan untuk membantu pekerjaan administrasi rutin.</p><div class="tags"><span class="tag">HTML</span><span class="tag">JavaScript</span></div></div></article>
+      <article class="project"><div class="project-art">💻</div><div class="project-body"><h3>Perawatan Komputer</h3><p>Instalasi software dan pengecekan dasar perangkat PC atau laptop.</p><div class="tags"><span class="tag">Hardware</span><span class="tag">Software</span></div></div></article>
+      <article class="project"><div class="project-art">🗄️</div><div class="project-body"><h3>Website Database</h3><p>Konsep website dinamis menggunakan PHP dan MySQL untuk mengelola data.</p><div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span></div></div></article>
+    </div>
+    <p class="note">Catatan: kartu ini merupakan contoh bidang keahlian, bukan klaim bahwa semua proyek telah selesai atau digunakan klien. Sesuaikan dengan proyek nyata yang pernah kamu kerjakan.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Perjalanan profesional</div>
+    <h2 class="section-title">Pengalaman Kerja</h2>
+    <div class="timeline">
+      <article class="job"><div class="year">2016 – 2021</div><div><h3>Kepala Urusan Umum dan Tata Usaha</h3><p>Pemerintah Desa Parangharjo — administrasi umum dan tata usaha.</p></div></article>
+      <article class="job"><div class="year">2013 – 2016</div><div><h3>Staf Tata Usaha</h3><p>Madrasah Aliyah Ihya’ Ulumiddin, Singojuruh.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <div class="section-label">Mari terhubung</div>
+        <h2>Punya peluang atau proyek menarik?</h2>
+        <p class="muted">Silakan hubungi saya untuk diskusi pekerjaan, kolaborasi, atau kebutuhan teknologi.</p>
+      </div>
+      <div class="contact-list">
+        <a class="contact-item" href="mailto:osengwest@gmail.com"><small>Email</small>osengwest@gmail.com</a>
+        <a class="contact-item" href="tel:+6285333007008"><small>Telepon</small>085 333 007 008</a>
+        <a class="contact-item" href="https://opetrmx.github.io/cv/" target="_blank" rel="noopener noreferrer"><small>CV Online</small>opetrmx.github.io/cv/ ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">© <span id="year"></span> Yusuf Ali Farhan · Dibuat dengan HTML, CSS & JavaScript.</div></footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', 'false');
+}));
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
