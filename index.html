@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV online Yusuf Ali Farhan — administrasi, desain grafis, dukungan komputer, jaringan, dan web design.">
+  <title>Yusuf Ali Farhan | CV Online</title>
+  <style>
+    :root {
+      --ink: #252c35;
+      --pink: #efc0be;
+      --pink-light: #fff2f1;
+      --paper: #ffffff;
+      --muted: #5c6470;
+      --line: #e8e9ec;
+      --accent: #d98e91;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: #eef0f3; color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif; line-height: 1.6;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(1100px, calc(100% - 32px)); margin: 32px auto;
+      background: var(--paper); display: grid; grid-template-columns: 310px 1fr;
+      box-shadow: 0 18px 55px #18202b1c; border-radius: 14px; overflow: hidden;
+    }
+    aside {
+      background: var(--pink-light); padding: 38px 28px;
+      border-top: 9px solid var(--pink);
+    }
+    .portrait-wrap { text-align: center; margin: 0 auto 30px; }
+    .portrait {
+      width: 190px; height: 230px; object-fit: cover; object-position: center 25%;
+      border-radius: 50%; border: 4px solid white;
+      outline: 2px solid var(--accent); box-shadow: 0 8px 24px #252c3514;
+    }
+    .side-title {
+      margin: 28px 0 12px; padding-bottom: 7px; border-bottom: 2px solid #d99b9b;
+      text-transform: uppercase; letter-spacing: 1.4px; font-size: 1rem;
+    }
+    .contact-item { margin: 12px 0; overflow-wrap: anywhere; font-size: .94rem; }
+    .contact-item strong { display: block; font-size: .76rem; text-transform: uppercase; color: #65606a; letter-spacing: .8px; }
+    .social { display: flex; gap: 10px; align-items: center; margin: 12px 0; overflow-wrap: anywhere; }
+    .social-icon {
+      flex: 0 0 34px; width: 34px; height: 34px; border: 1px solid #d99b9b;
+      color: var(--ink); border-radius: 50%; display: grid; place-items: center; font-weight: 700;
+    }
+    main { padding: 44px 46px 48px; min-width: 0; }
+    .eyebrow { color: #a46569; text-transform: uppercase; letter-spacing: 3px; font-size: .78rem; font-weight: 700; }
+    h1 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; margin: 8px 0 14px; letter-spacing: -1.4px; }
+    .headline { color: var(--muted); margin: 0 0 32px; max-width: 620px; }
+    section { margin-top: 28px; }
+    .section-heading {
+      display: flex; align-items: center; gap: 12px; margin: 0 0 18px;
+      text-transform: uppercase; letter-spacing: 1.3px; font-size: 1.1rem;
+    }
+    .section-heading::before { content: ""; width: 7px; height: 28px; background: var(--pink); border-radius: 5px; }
+    .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+    .detail { border-bottom: 1px solid var(--line); padding: 8px 0; }
+    .detail span { display: block; font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; }
+    .detail strong { font-size: .94rem; font-weight: 600; }
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item { display: grid; grid-template-columns: 112px 1fr; gap: 16px; }
+    .year { font-weight: 700; color: #a46569; font-size: .9rem; }
+    .item-title { font-weight: 700; margin: 0 0 3px; }
+    .item-desc { color: var(--muted); margin: 0; font-size: .94rem; }
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .skill { background: #f7f7f8; border: 1px solid var(--line); padding: 12px 14px; border-radius: 8px; font-weight: 600; font-size: .92rem; }
+    .skill::before { content: "✓"; color: #b46e73; margin-right: 8px; }
+    footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line); padding-top: 18px; margin-top: 38px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px;
+      border-radius: 7px; text-decoration: none; font-weight: 700; font-size: .9rem;
+      border: 1px solid var(--ink); background: var(--ink); color: white;
+    }
+    .btn.secondary { background: white; color: var(--ink); }
+    @media (max-width: 760px) {
+      .page { grid-template-columns: 1fr; margin: 14px auto; width: calc(100% - 20px); }
+      aside { padding: 28px 24px; }
+      .portrait { width: 150px; height: 180px; }
+      main { padding: 30px 24px; }
+      .profile-grid, .skills { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 2px; }
+      .year { margin-bottom: 2px; }
+    }
+    @media print {
+      body { background: white; }
+      .page { width: 100%; margin: 0; box-shadow: none; border-radius: 0; }
+      .actions { display: none; }
+      aside, main { padding-top: 24px; padding-bottom: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside>
+      <div class="portrait-wrap">
+        <img class="portrait" src="foto-profil.jpg" alt="Foto profil Yusuf Ali Farhan">
+      </div>
+      <h2 class="side-title">Kontak</h2>
+      <div class="contact-item"><strong>Telepon</strong><a href="tel:085333007008">085 333 007 008</a></div>
+      <div class="contact-item"><strong>Email</strong><a href="mailto:osengwest@gmail.com">osengwest@gmail.com</a></div>
+      <div class="contact-item"><strong>Alamat</strong>Dusun Krajan RT.003 RW.001, Desa Parangharjo, Kecamatan Songgon, Kabupaten Banyuwangi</div>
+
+      <h2 class="side-title">Bahasa</h2>
+      <div class="contact-item">Bahasa Indonesia</div>
+
+      <h2 class="side-title">Media Sosial</h2>
+      <div class="social"><span class="social-icon">f</span><span>Opet</span></div>
+      <div class="social"><span class="social-icon">𝕏</span><span>@Opetid</span></div>
+      <div class="social"><span class="social-icon">◎</span><span>@Opet.id</span></div>
+    </aside>
+
+    <main>
+      <div class="eyebrow">Curriculum Vitae</div>
+      <h1>Yusuf Ali Farhan</h1>
+      <p class="headline">Administrasi · Teknologi Komputer · Desain Grafis · Web Design</p>
+      <div class="actions">
+        <a class="btn" href="mailto:osengwest@gmail.com">Hubungi Saya</a>
+        <a class="btn secondary" href="#" onclick="window.print(); return false;">Cetak / Simpan PDF</a>
+      </div>
+
+      <section>
+        <h2 class="section-heading">Profil</h2>
+        <div class="profile-grid">
+          <div class="detail"><span>Tempat, tanggal lahir</span><strong>Banyuwangi, 24 Oktober 1993</strong></div>
+          <div class="detail"><span>Jenis kelamin</span><strong>Laki-laki</strong></div>
+          <div class="detail"><span>Agama</span><strong>Islam</strong></div>
+          <div class="detail"><span>Status</span><strong>Menikah</strong></div>
+          <div class="detail"><span>Kewarganegaraan</span><strong>Indonesia</strong></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-heading">Pendidikan</h2>
+        <div class="timeline">
+          <div class="timeline-item"><div class="year">2009 – 2012</div><div><p class="item-title">SMK Negeri Ihya’ Ulumiddin Singojuruh</p><p class="item-desc">Teknik Komputer dan Jaringan</p></div></div>
+          <div class="timeline-item"><div class="year">2006 – 2009</div><div><p class="item-title">MTs Al-Mujahidin Singojuruh</p></div></div>
+          <div class="timeline-item"><div class="year">2000 – 2006</div><div><p class="item-title">SD Negeri 2 Parangharjo</p></div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-heading">Pengalaman</h2>
+        <div class="timeline">
+          <div class="timeline-item"><div class="year">2013 – 2016</div><div><p class="item-title">Staf Tata Usaha</p><p class="item-desc">Madrasah Aliyah Ihya’ Ulumiddin – Singojuruh</p></div></div>
+          <div class="timeline-item"><div class="year">2016 – 2021</div><div><p class="item-title">Kepala Urusan Umum dan Tata Usaha</p><p class="item-desc">Pemerintah Desa Parangharjo</p></div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-heading">Kemampuan</h2>
+        <div class="skills">
+          <div class="skill">Administrasi</div>
+          <div class="skill">Microsoft Office</div>
+          <div class="skill">Desain grafis</div>
+          <div class="skill">Instalasi software</div>
+          <div class="skill">Perakitan dan hardware PC / laptop</div>
+          <div class="skill">Instalasi jaringan internet dan CCTV</div>
+          <div class="skill">Web design: HTML, PHP, MySQL</div>
+        </div>
+      </section>
+
+      <footer>CV Online · Yusuf Ali Farhan</footer>
+    </main>
+  </div>
+</body>
+</html>
